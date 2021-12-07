@@ -7,7 +7,7 @@ import com.rabbitmq.client.ConnectionFactory;
 /**
  * Classe responsavel por enviar itens à fila
  */
-public class Produto {
+public class Produtor {
 
 
 	public static void main(String[] args) throws Exception{

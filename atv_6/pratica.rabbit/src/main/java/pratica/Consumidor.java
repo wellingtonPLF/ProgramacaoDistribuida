@@ -4,7 +4,7 @@ import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.DeliverCallback;
 
-public class Consumo {
+public class Consumidor {
     public static void main(String[] args) throws Exception {
         System.out.println("Consumidor");
 
@@ -27,5 +27,6 @@ public class Consumo {
 
         //Consome da fila
         canal.basicConsume(NOME_FILA, true, callback, consumerTag -> {});
+        System.out.println("Continuarei executando outras atividades enquanto não chega mensagem...");
     }
 }

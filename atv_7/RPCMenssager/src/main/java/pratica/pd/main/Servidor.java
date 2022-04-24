@@ -8,13 +8,11 @@ import com.rabbitmq.client.DeliverCallback;
 
 public class Servidor {
 	 private static final String RPC_QUEUE_NAME = "MinhaFila";
-
-	    private static int fib(int n) {
-	        if (n == 0) return 0;
-	        if (n == 1) return 1;
-	        return fib(n - 1) + fib(n - 2);
-	    }
-
+	 	
+	 	public static String meuNome() {
+	 		return "wellington pessoa de lima filho";
+	 	}
+	 
 	    public static void main(String[] argv) throws Exception {
 	        ConnectionFactory factory = new ConnectionFactory();
 	        factory.setHost("localhost");
@@ -34,13 +32,15 @@ public class Servidor {
 	                        .Builder()
 	                        .correlationId(delivery.getProperties().getCorrelationId())
 	                        .build();
-
-	                String response = "Mensagem foi recebida!";
-
+	                
+	                String response = "";
+	                
 	                try {
 	                    String message = new String(delivery.getBody(), "UTF-8");
-
 	                    System.out.println(" [.] MensagemReceived = " + message + ";");
+	                    
+	                    response = meuNome();
+	                    
 	                } catch (RuntimeException e) {
 	                    System.out.println(" [.] " + e.toString());
 	                } finally {

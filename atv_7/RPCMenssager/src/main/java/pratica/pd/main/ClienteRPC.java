@@ -10,8 +10,6 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.TimeoutException;
 
 import com.rabbitmq.client.AMQP;
-import com.rabbitmq.client.AMQP.BasicProperties;
-import com.rabbitmq.client.AMQP.BasicProperties;
 
 
 public class ClienteRPC implements AutoCloseable{
@@ -31,8 +29,8 @@ public class ClienteRPC implements AutoCloseable{
 
     public static void main(String[] argv) {
         try (ClienteRPC rpcRequest = new ClienteRPC()) {
-        	String mensagem = "Wellington Pessoa de Lima Filho";
-            System.out.println(" [x] Passando mensagem = " + mensagem + ";");
+        	String mensagem = "Get Nome";
+            System.out.println(" [x] Passando request = " + mensagem + ";");
             String response = rpcRequest.call(mensagem);
             System.out.println(" [.] Got '" + response + "'");
         	

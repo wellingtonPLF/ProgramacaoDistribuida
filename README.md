@@ -1,4 +1,4 @@
 # ProgramacaoDistribuida
 Práticas de Programação Distribuída.  (⚙️)
 
--> Algumas atividades da cadeira de PD
+-> Algumas atividades da cadeira de PD;

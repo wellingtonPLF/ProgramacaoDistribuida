@@ -14,7 +14,7 @@ import com.rabbitmq.client.AMQP;
 
 public class ClienteRPC implements AutoCloseable{
 	
-	private Connection connection;
+    private Connection connection;
     private Channel channel;
     private String requestQueueName = "MinhaFila";
 
@@ -29,7 +29,11 @@ public class ClienteRPC implements AutoCloseable{
 
     public static void main(String[] argv) {
         try (ClienteRPC rpcRequest = new ClienteRPC()) {
+<<<<<<< HEAD
         	String mensagem = "Get Nome";
+=======
+            String mensagem = "Get Nome";
+>>>>>>> 703ef36af64ca63d4bdcbb52000c51eab4bf35e6
             System.out.println(" [x] Passando request = " + mensagem + ";");
             String response = rpcRequest.call(mensagem);
             System.out.println(" [.] Got '" + response + "'");
